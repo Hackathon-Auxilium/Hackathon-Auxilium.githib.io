@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.sidenav {
+  width: 225px;
+  position: fixed;
+  z-index: 1;
+  top: 180px;
+  left: 10px;
+  background: #87d4e6;
+  overflow-x: hidden;
+  margin-top: 11.5px;
+  padding: 4% 0;
+  border: 6px outset red;
+  box-shadow: 11px 11px 5px #888888;
+  background-color: #f0f0f0;
+  transition-duration: 0.4s;
+  /*cursor: pointer;*/
+}
+
+body {
+  bottom: 0;
+  color: white;
+  background-color: #283e42;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16.5px;
+  color: #4a4854;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #000000;
+  text-shadow: 1px 1px 5px #000;
+  font-size: 17px;
+}
+.sidenav:hover {
+	box-shadow: 17px 17px 9px #888888;
+  border: 6px outset blue;
+}
+::-webkit-scrollbar {
+  width: 15px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.main {
+  margin-left: 275px;
+  padding-top: 290px;
+  margin-top: 0;
+  margin-right: 145px;
+  text-align: justify;
+  font-size: 16pt;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+  width: 885px;
+}
+.header {
+  color: white;
+  margin-right: 145px;
+  margin-left: 275px;
+  margin-top: 60px;
+  top: 0;
+  background-color: #283e42;
+  font-weight: 800;
+	font-variant: small-caps;
+	font-family : Gill Sans, sans-serif;
+	font-stretch: ultra-condensed;
+  font-size: 23pt;
+}
+.comma {
+  font-family: Arial Black;
+  font-stretch: ultra-condensed;
+}
+.mainmain {
+  margin-left: 275px;
+  margin-top: 35px;
+	font-size: 16pt;
+  font-weight: 850;
+  /*text-indent: 140px;*/
+  float: left;
+  /*border-left: 4px solid #6b6464;*/
+  color: #706e6e;
+  border: 2px solid #c2bcbc;
+  border-radius: 17px;
+  padding: 10px;
+  margin-right: 145px;
+  background-color: #f0f0f0;
+  box-shadow: 11px 11px 5px #888888;
+  line-height: 85%;
+  transition-duration: 0.4s;
+  
+  margin-bottom: 25px;
+}
+.mainmain:hover {
+  box-shadow: 17px 17px 9px #888888;
+  border: 2px solid #757d77;
+  background-color: #f7f7dc;
+  color: #845194;
+}
+.author {
+  text-align: right;
+  padding-right: 25px;
+}
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.flip-box-other {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  position: absolute;
+  left: 600px;
+  bottom: -33px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-box-other-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+.flip-box-other:hover .flip-box-other-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-box-other-front, .flip-box-other-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-box-other-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-box-other-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+.sdg11 {
+  width: 200px;
+  height: 25px;
+  margin-bottom: 0 !important;
+  background-color: #1b1c1c;
+  color: white;
+  font-family: Gill Sans, sans-serif;
+  text-align: center;
+  top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  float: left;
+  padding: 10px;
+  /*margin-top: 10px;*/
+/*  left: 10px;*/
+  bottom: 0;
+  border-radius: 2px;
+  margin-left: 40%;
+  margin-top: 0px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  /*outline-color: black;*/
+  /*outline: 3px solid black;*/
+}
+.sdg11:hover {
+  background-color: white;
+  color: #1b1c1c;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<p class="header" style="font-size: 2.5em;"> Situation of Rural Healthcare in India </p>
+<div class="sidenav">
+  <a href="Website_SLPP - Home.html" target="_blank">Home</a>
+  <a href="About SDGs.html">Indian Rural Healthcare</a>
+</div>
+<hr class = "rounded"></hr>
+<div class="mainmain">
+  <p><i><h1><b class="comma">“</b></h1>While expanding, healthcare access is a critical priority for the Indian government and the private sector, the gap between aspiration and today's reality is all too apparent<h1><b class = "comma"><text-align: right>”</text></b></h1></i></p>
+  <p class = "author"> - Murray Aitken </p>
+</div>
+
+<!-- <p style = "font-size: 24pt; font-variant: small-caps; font-weight: bold; font-family: Arial; text-shadow: 3px 3px 5px black; text-align: center; margin-top: 100px; line-height: 10px">Scroll Down for More SDGs: </p> -->
+<!-- <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E_SDG_logo_UN_emblem_square_trans_WEB-1024x879.png"> -->
+<div class="main">
+  <p>
+    The first wave of the ongoing COVID19 pandemic last year saw only minimal penetration and spread of the virus in the rural areas, even in predominantly rural states like UP and Bihar. Many possible reasons such as low population density, open environment, relatively slower-moving population, high proportion of young people were proposed to be factors preventing the spread and limiting the severity of infection in the villages.
+  </p>
+  <p>
+    With the rapidity by which the second wave of COVID surged, the notion of COVID being an urban phenomenon vanished with the same speed. An early glimpse of profound rural spread was visible even in urbanised states like Maharashtra and Kerala. 
+  </p>
+  <p>
+    So, when the second wave entered northern India, this time it could easily break the barrier between rural-urban. Although segregated official data on rural-urban cases are scarce, there are plenty of indicators to point towards the massive intrusion of the virus in rural households. 
+  </p>
+  <p>
+    Several factors could have contributed to such a rapid spurt in rural cases. Most important being, reverse migration of workers from the urban area, higher transmissibility of the virus, lack of COVID appropriate behavior, and complete withdrawal of the health system from prevention activities.
+  </p>
+  <p>
+    Ultimately, we have landed in a situation where the rural spread of infection is the bigger concern and needs policy attention based on contextual understanding of multiple dimensions of the problem. 
+  </p>
+  <p>
+    During routine times, the most closely located, easily available, and trusted provider in the rural area is often the non-qualified practitioners, also called ‘Rural Medical Practitioner’ (RMP), or sometimes derogatorily termed as ‘Jhola Chap’. Visiting a rural primary health centre is mainly limited to OPD consultation and availing free or cheap medicine, availing services under national health programmes or medico-legal emergencies. The rural outreach services of public health systems are also restricted to activities and service delivery of targeted national or state health programmes. 
+  </p>
+  <p>
+    During the second wave, this health-seeking pattern altered severely when the chaos in health systems in urban India was extensively visible. The trust of the rural population in the organised health system took a serious beating. People struggled to see any value addition in going to the public hospital, they feared financial bankruptcy if going to the private sector. The public health system which generally reached their door for delivering essential health care was also missing in action. 
+  </p>
+  <p>
+    As a result, they resorted to their tried and tested route to access health care from parallel non-formal health providers. 
+  </p>
+  <b> Hover over these images to see the reality of the Indian rural healthcare system.</b>
+
+</div>
+<div>
+<div class="flip-box" style="top: 106px; margin-left: 275px; margin-right: 20px; margin-bottom: 15px;">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.dailyexcelsior.com/wp-content/uploads/2018/01/616.jpg" alt="Picture 1" style="width:300px;height:200px;">
+    </div>
+    <div class="flip-box-back">
+      <h2><b>Fact 1</b></h2>
+      <p style="padding: 0 5px;">The Indian rural health care system is a three-tier system comprising Sub-Centres, Primary Health Centres (PHC), and Community Health Centres (CHC).</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box" style="top: -110px; left: 315px; margin-left: 275px; margin-right: 20px;margin-bottom: 15px;">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.thestatesman.com/wp-content/uploads/2017/12/Rural-healthcare.jpg" alt="Picture 2" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+      <h2><b>Fact 2</b></h2>
+      <p style="padding: 0 5px;">The availability of high-quality healthcare in rural locations may be aided by improved living and working conditions, higher incomes, the use of disruptive technology, according to the evidence.</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box" style="top: -328px; left: 632px; margin-left: 275px; margin-right: 20px;margin-bottom: 15px;">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://www.thenewleam.com/wp-content/uploads/2018/02/Yourstory_iKure_5.jpg" alt="SDG 3" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+      <h2><b >Fact 3</b></h2>
+      <p style="padding: 0 15px;">Rural India Faces an acute 60% Shortage of good, qualified Doctors</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<div style="background-color: lightgrey; height: 80px; width: 100%; color: black; bottom: 0; right: 0; left: 0">
+  <span style="margin-left: 600px; top: 15px; position: relative; font-size: 2.5em;">By Team Auxilium</span>
+</div>
+</body>
+</html>
